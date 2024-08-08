@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: leaguepedia-api
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration
+
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/leaguepedia_db
+    username: leaguepedia
+    password: p@ssw0rd
+
+  jpa:
+    hibernate:
+      search:
+        default:
+          indexmanager: elasticsearch
+          elasticsearch:
+            host: localhost:9200
+            index_schema_management_strategy: drop-and-create
+            required_index_status: yellow
+      ddl-auto: update # When you launch the application for the first time - switch "none" at "create" / "none" if u have custom files
+
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+    # Hibernate to create our tables before inserting the data into them
+    defer-datasource-initialization: true
+
+  # Inserting data via data.sql or creating schema via schema.sql
+  sql:
+    init:
+      mode: always # <-------------------------------------------------------------------------------- always / never
+
+springdoc:
+  swagger-ui:
+    path: /docs.html
+  api-docs:
+    path: /docs
+
+# Server configuration
+server:
+  port: 8080 #set your port

@@ -34,6 +34,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -45,6 +60,22 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate.search/hibernate-search-mapper-orm-orm6 -->
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-mapper-orm-orm6</artifactId>
+            <version>6.2.4.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.search/hibernate-search-backend-elasticsearch -->
+        <dependency>
+            <groupId>org.hibernate.search</groupId>
+            <artifactId>hibernate-search-backend-elasticsearch</artifactId>
+            <version>6.2.4.Final</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

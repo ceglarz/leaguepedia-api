@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: leaguepedia_db
+      POSTGRES_USER: leaguepedia
+      POSTGRES_PASSWORD: p@ssw0rd
+
+  elasticsearch:
+      image: 'bitnami/elasticsearch:7.17.21'
+      ports:
+        - 9200:9200
+        - 9300:9300
